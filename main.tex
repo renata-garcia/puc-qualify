@@ -1,0 +1,148 @@
+%%%Tools
+%%%%%http://www.tablesgenerator.com/#
+%%%%%https://www.codecogs.com/latex/eqneditor.php
+%%%%%https://www.sharelatex.com/learn/List_of_Greek_letters_and_math_symbols
+%%%%%https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+%%%%%https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode
+
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{subfiles}
+\usepackage[utf8]{inputenc} %recongnize pt {ç, ã}
+
+\usepackage{ragged2e}
+\usepackage{lipsum}
+\let\olditemize=\itemize 
+\renewenvironment{itemize}{\olditemize\justify}{\endlist} 
+
+\usepackage[backend=biber]{biblatex}
+\bibliography{rl.bib}
+
+% Removes icon in bibliography
+\setbeamertemplate{bibliography item}{}
+
+\usepackage{amsmath}
+\usepackage{algorithm,algorithmic}
+
+%\bibliographystyle{apalike}
+%\bibliographystyle{plainnat}
+    
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen} %side bar
+%\usetheme{Berkeley} %side bar
+%\usetheme{Berlin} %bullet progress
+%\usetheme{Boadilla} %clean
+%\usetheme{boxes} %clean
+%\usetheme{CambridgeUS} %very red
+%\usetheme{Darmstadt}  %bullet progress side-by-side
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+\usetheme{metropolis}
+
+\title{Hierarchical Reinforcement Learning}
+\subtitle{Exame de Qualificação do Doutorado}
+
+\author{Renata Garcia Oliveira}
+
+
+\institute[PUC-Rio]
+{
+  Departamento de Engenharia Elétrica\\
+  Pontifícia Universidade Católica do Rio de Janeiro
+}
+
+\date{Exame de Qualificação, 2017.2}
+
+\subject{Theoretical Reinforcement Learning}
+% This is only inserted into the PDF information catalog. Can be left out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+
+% http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.190.3128&rep=rep1&type=pdf
+% https://web.eecs.umich.edu/~baveja/Papers/IMRLIEEETAMDFinal.pdf
+% http://www.cs.bham.ac.uk/research/projects/cogaff/aiib/papers/invited.d/lewis-singh-barto-2010-aiib-mar-02.pdf
+
+
+\subfile{sections/resumo.tex}
+
+\subfile{sections/introducao.tex}
+
+\subfile{sections/temporalAbstraction.tex}
+
+\subfile{sections/hrl.tex}
+
+\subfile{sections/sutton1999.tex}
+
+\subfile{sections/kulkarni2016.tex}
+
+\subfile{sections/secondsec.tex}
+% Placing a * after \section means it will not show in the
+% outline or table of contents.
+\subfile{sections/sumary.tex}
+
+
+%\begin{frame}{Reference}
+    %\bibliographystyle{amsalpha}
+    %\bibliographystyle{abbrvnat}
+%    \bibliography{rl}
+%\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+% This prints the bibliography on the slide
+\printbibliography
+\end{frame}
+
+\end{document}
+
+

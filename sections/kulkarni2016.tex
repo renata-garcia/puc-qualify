@@ -1,0 +1,63 @@
+%https://arxiv.org/pdf/1604.06057.pdf
+
+\section{Kulkarni2016}
+
+\subsection{Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation}
+\begin{frame}{Abstract}{}
+  \begin{itemize}
+    \item {Learning goal-directed behavior in environments with sparse feedback is a major challenge for TL algorithms}
+    \item{Intrinsically motivated agents can explore new behavior for its own sale rather than to directly solve problems}
+    \item{Such intrinsic baheaviors could eventually help the agent solve tasks posed by the environment}
+    \item{hierarchical-DQN (h-DQN)}
+    \begin{itemize}
+        \item{framework to integrate hierarchical value functions}
+        \item{operating at diferent temporal scales, with intrisically motivated deep reinforcement learning}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Abstract}{}
+  \begin{itemize}
+    \item h-DQN
+    \begin{itemize}
+        \item top-level value function learns a policy over intrinsic goals, and
+        \item a lower-level function learns a policy over atomic actions to satisfy the given goals
+        \item 
+    \end{itemize}
+    \item allows for flexible goal specifications, such as functions over entites and relations
+    \item two problems with very sparse, delayed feedback
+    \begin{enumerate}
+        \item a complex discrete stochastic decision process
+        \item the classic ATARI game 'Montezuma's Revenge'
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\subsection{Introduction}
+\begin{frame}{Introduction}{}
+  \begin{itemize}
+    
+    \item Learning goal-directed behavior with sparse feedback from complex environments is a fundamental challenge for artificial intelligence.
+    
+    \item Learning in this setting requires the agent to represent knowledge at multiple levels of spatio-temporal abstractions and to explore the environment efficiently
+    
+    \item ref {\color{red} \bf{non-linear function approximators coupled with RL ] have made it possible to learn abstractions over highdimensional state spaces, but the task of exploration with sparse feedback still remains a major challenge}}
+    
+    \begin{itemize}
+        \color{red}
+        
+        \item [21] J. Koutn. Evolving deep unsupervised convolutional networks for vision-based reinforcement learning. 2014.
+        
+        \item [28] V. Mnih. Human-level control through deep reinforcement learning, 2015.
+        
+        \item [37] D. Silver. Mastering the game of go with deep neural networks and tree search, 2016.
+    \end{itemize}
+    
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}{}
+  \begin{itemize}
+    \item Existing methods like {\color{red} Boltzmann exploration and Thomson sampling (B. C. Stadie, Incentivizing exploration in reinforcement learning with deep predictive models, 2015) (I. Osband, Deep exploration via bootstrapped dqn, 2016) often significant improvements over e-greedy, but are limited due to the underlying models functioning at the level of basic actions}
+  \end{itemize}
+\end{frame}
